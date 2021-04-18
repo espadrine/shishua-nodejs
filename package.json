@@ -5,7 +5,7 @@
   },
   "gypfile": true,
   "name": "shishua",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "SHISHUA: The fastest PRNG. A seedrandom-compatible random number generator.",
   "main": "main.js",
   "repository": {
