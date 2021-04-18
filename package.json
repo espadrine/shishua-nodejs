@@ -1,18 +1,13 @@
 {
-  "dependencies": {
-    "random": "^3.0.5",
-    "seedrandom": "^3.0.5"
-  },
   "scripts": {
     "install": "node-gyp rebuild",
     "test": "node test"
   },
   "gypfile": true,
   "name": "shishua",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SHISHUA: The fastest PRNG. A seedrandom-compatible random number generator.",
   "main": "main.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/espadrine/shishua-nodejs.git"

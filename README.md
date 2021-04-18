@@ -6,7 +6,7 @@ This [npm][] package provides bindings for Node.js.
 ```js
 const shishua = require('shishua');
 const buffer = Buffer.alloc(1 << 30);  // 1 GiB
-shishua.fill(buffer);                  // ~100ms on my laptop.
+shishua().fill(buffer);                // ~100ms on my laptop.
 ```
 
 The package is API-compatible with [seedrandom][],
