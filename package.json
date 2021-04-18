@@ -1,0 +1,40 @@
+{
+  "dependencies": {
+    "random": "^3.0.5",
+    "seedrandom": "^3.0.5"
+  },
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "test": "node test"
+  },
+  "gypfile": true,
+  "name": "shishua",
+  "version": "1.0.0",
+  "description": "SHISHUA: The fastest PRNG. A seedrandom-compatible random number generator.",
+  "main": "main.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/espadrine/shishua-nodejs.git"
+  },
+  "keywords": [
+    "PRNG",
+    "RNG",
+    "PRG",
+    "DRBG",
+    "pseudorandom",
+    "random",
+    "number",
+    "generator",
+    "seed",
+    "stats",
+    "crypto",
+    "seedrandom"
+  ],
+  "author": "Thaddée Tyl",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/espadrine/shishua-nodejs/issues"
+  },
+  "homepage": "https://github.com/espadrine/shishua-nodejs#readme"
+}
