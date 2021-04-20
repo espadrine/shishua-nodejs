@@ -9,6 +9,11 @@ static const napi_type_tag SHISHUAHandleTypeTag = {
   0x4ba1eb248da1ce9e, 0x60349a86f3a4bfa7
 };
 
+void DeletePRNG(napi_env env, void *finalize_data, void *finalize_hint) {
+  prng_state *prng = (prng_state *)finalize_data;
+  delete prng;
+}
+
 napi_value NewPRNG(napi_env env, napi_callback_info args) {
   napi_value result;
   napi_status status;
@@ -40,7 +45,7 @@ napi_value NewPRNG(napi_env env, napi_callback_info args) {
   if (status != napi_ok) return NULL;
   status = napi_type_tag_object(env, result, &SHISHUAHandleTypeTag);
   if (status != napi_ok) return NULL;
-  status = napi_wrap(env, result, prng, NULL, NULL, NULL);
+  status = napi_wrap(env, result, prng, DeletePRNG, NULL, NULL);
   if (status != napi_ok) return NULL;
 
   return result;
@@ -64,7 +69,7 @@ napi_value Generate(napi_env env, napi_callback_info args) {
   if (!is_shishua_handle) return NULL;
 
   // Extract the C structure from the first argument.
-  prng_state *prng = new prng_state;
+  prng_state *prng;
   status = napi_unwrap(env, argv[0], (void**)&prng);
   if (status != napi_ok) return NULL;
 
