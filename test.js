@@ -39,6 +39,14 @@ const assert = require('assert/strict');
     'Buffer filling, not 128-byte aligned');
 }
 
+{
+  const buffer = Buffer.alloc((1 << 17) + 127);
+  shishua('').fill(buffer);
+  assert.equal(buffer.slice(1 << 17).toString('base64'),
+    'Yq+8pK2lYANvWWDiVvIE6utKTz0RDLS14RXgWBhQGmHpNYfSiQ67nr4Z6GaSSBvzjBx6qcC33Y+jSYyCb5IhTU6CknNP4HxCxCegB5xHoF1UeyEtDRl0J53RkCfpuxQ5+r79Tr3djXkmG09lEzOucvIqP/LLXOruwrmGC7GuyQ==',
+    'Buffer filling, beyond internal buffer size');
+}
+
 // Number generation.
 
 {

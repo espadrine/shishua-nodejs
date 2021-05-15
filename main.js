@@ -26,11 +26,11 @@ class PRNG {
       // fast-path by bringing our own buffer.
       addon.generate(this.state, buffer);
     } else {
-      let copied = this.buffer.copy(buffer, this.index);
+      let copied = this.buffer.copy(buffer, 0, this.index);
       this.index += copied;
       while (copied < buffer.length) {
         this.fillBuffer();
-        let n = this.buffer.copy(buffer, 0);
+        let n = this.buffer.copy(buffer, copied);
         copied += n;
         this.index += n;
       }
